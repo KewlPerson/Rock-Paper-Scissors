@@ -1,0 +1,172 @@
+<DOCTYPE! html>
+<html>
+<title>Rock, Paper, Scissors!</title>
+<h2>Rock, Paper, Scissors</h2>
+<body bgcolor=#A020F0>
+<p>Instructions: Click your option, then click submit. After you get the alert and the opponent's hand is shown, click Next Round. This game is out of 3.</p>
+<b id="bold">Score:</b><br>
+<b id="bold2">Status: Undecided</b><br>
+<canvas id="RPS" width="700" height="400" style="border:1px solid #c3c3c3";></canvas>
+<script>
+var CanAlert = 0
+var score1 = 0;
+var score2 = 0;
+var rounds = 0;
+var Player1Hand = "";
+var Player2Hand = "";
+var canvas = document.getElementById("RPS");
+var ctx = canvas.getContext("2d");
+ctx.beginPath();
+ctx.rect(0, 0, 700, 400);
+ctx.fillStyle = "#FFFFFF";
+ctx.fill()
+ctx.stroke();
+document.getElementById("bold").innerHTML = "Score: " + score1;
+function Player1Rock(){
+ctx.beginPath();
+ctx.arc(100, 200, 40, 0, 2 * Math.PI);
+ctx.stroke();
+Player1Hand = "Rock";
+}
+function Player1Scissors(){
+ctx.beginPath()
+ctx.arc(70, 150, 20, 0, 2 * Math.PI);
+ctx.arc(70, 200, 20, 0, 2 * Math.PI);
+ctx.stroke();
+ctx.beginPath();
+ctx.moveTo(90, 150);
+ctx.lineTo(130, 200);
+ctx.stroke();
+ctx.beginPath();
+ctx.moveTo(90, 200)
+ctx.lineTo(130, 150)
+ctx.stroke();
+Player1Hand = "Scissors";
+}
+function Player1Paper(){
+ctx.beginPath();
+ctx.rect(70, 150, 85, 110)
+ctx.stroke();
+Player1Hand = "Paper";
+}
+function Computer(){
+var decider = Math.random();
+if(decider < 0.3 & decider > 0){
+ctx.beginPath()
+ctx.arc(600, 200, 40, 0, 2 * Math.PI);
+ctx.stroke();
+Player2Hand = "Rock";
+CanAlert++;
+}
+if(decider < 0.6 & decider > 0.3){
+ctx.beginPath();
+ctx.rect(565, 150, 85, 110)
+ctx.stroke();
+Player2Hand = "Paper";
+CanAlert++;
+}
+if(decider < 0.9 & decider > 0.6){
+ctx.beginPath()
+ctx.arc(545, 250, 20, 0, 2 * Math.PI);
+ctx.arc(545, 200, 20, 0, 2 * Math.PI);
+ctx.stroke();
+ctx.beginPath();
+ctx.moveTo(525, 200);
+ctx.lineTo(475, 250);
+ctx.stroke();
+ctx.beginPath();
+ctx.moveTo(525, 240)
+ctx.lineTo(475, 175)
+ctx.stroke();
+Player2Hand = "Scissors";
+CanAlert++;
+}
+if(decider > 0.9){
+Computer()
+}
+if(Player1Hand == "Rock" && Player2Hand == "Scissors") {
+score1++;
+document.getElementById("bold").innerHTML = "Score: " + score1;
+rounds++;
+if(CanAlert == 1){
+alert("You win this round.");
+CanAlert -= 1;
+}
+}
+else if(Player2Hand == "Rock" && Player1Hand == "Scissors") {
+score2++;
+rounds++;
+if(CanAlert == 1){
+alert("You lose this round.");
+CanAlert -= 1;
+}
+}
+else if(Player1Hand == "Paper" && Player2Hand == "Rock") {
+score1++;
+document.getElementById("bold").innerHTML = "Score: " + score1;
+rounds++;
+if(CanAlert == 1){
+alert("You win this round.");
+CanAlert -= 1;
+}
+}
+if(Player2Hand == "Paper" && Player1Hand == "Rock") {
+score2++;
+rounds++;
+if(CanAlert == 1){
+alert("You lose this round.");
+CanAlert -= 1;
+}
+}
+else if(Player1Hand == "Scissors" && Player2Hand == "Paper") {
+score1++;
+document.getElementById("bold").innerHTML = "Score: " + score1;
+rounds++;
+if(CanAlert == 1){
+alert("You win this round.");
+CanAlert -= 1;
+}
+}
+else if(Player2Hand == "Scissors" && Player1Hand == "Paper") {
+score2++;
+rounds++;
+if(CanAlert == 1){
+alert("You lose this round.");
+CanAlert -= 1;
+}
+}
+else if(Player1Hand == Player2Hand && Player2Hand != "") {
+rounds++;
+if(CanAlert == 1){
+alert("You are tied this round.");
+CanAlert -= 1
+}
+}
+if(rounds >= 3){
+if(score1 > score2){
+document.getElementById("bold2").innerHTML = "Status: Won!"
+}
+else if(score1 < score2){
+document.getElementById("bold2").innerHTML = "Status: Lost"
+}
+else if(score1 == score2){
+document.getElementById("bold2").innerHTML = "Status: Tie"
+}
+alert("All 3 Rounds are finished. Check your status to see if you won!");
+}
+}
+function nextRound(){
+ctx.beginPath();
+ctx.rect(0, 0, 700, 400);
+ctx.fillStyle = "#FFFFFF";
+ctx.fill();
+ctx.stroke();
+}
+</script>
+<br><button onclick="Player1Rock()">Rock!</button>
+<button onclick="Player1Paper()">Paper!</button>
+<button onclick="Player1Scissors()">Scissors!</button>
+<button onclick="Computer()">Submit</button>
+<button onclick="nextRound()">Next Round</button>
+</body>
+</html>
