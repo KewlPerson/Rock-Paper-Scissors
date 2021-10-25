@@ -35,6 +35,7 @@ ctx.fillStyle = "#FFFFFF";
 ctx.fill()
 ctx.stroke();
 document.getElementById("bold").innerHTML = "Score: " + score1;
+document.getElementById("enemyscore").innerHTML = "Enemy Score: " + score2;
 function Player1Rock(){
 ctx.beginPath();
 ctx.strokeStyle = "#FFFFFF";
@@ -88,7 +89,6 @@ Player1Hand = "Paper";
 function Computer(){
 CanContinue = 1;
 CanSubmit = 0;
-document.getElementById("enemyscore").innerHTML - "Enemy Score: " + score2;
 var decider = Math.random();
 if(decider < 0.3 & decider > 0){
 ctx.beginPath();
@@ -137,6 +137,7 @@ score2++;
 rounds++;
 if(CanAlert == 1){
 alert("You lose this round.");
+document.getElementById("enemyscore").innerHTML = "Enemy Score: " + score2;
 CanAlert -= 1;
 }
 }
@@ -154,6 +155,7 @@ score2++;
 rounds++;
 if(CanAlert == 1){
 alert("You lose this round.");
+document.getElementById("enemyscore").innerHTML = "Enemy Score: " + score2;
 CanAlert -= 1;
 }
 }
@@ -171,6 +173,7 @@ score2++;
 rounds++;
 if(CanAlert == 1){
 alert("You lose this round.");
+document.getElementById("enemyscore").innerHTML = "Enemy Score: " + score2;
 CanAlert -= 1;
 }
 }
