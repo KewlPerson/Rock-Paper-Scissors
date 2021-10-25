@@ -40,7 +40,10 @@ ctx.stroke();
 Player1Hand = "Rock";
 }
 function Player1Scissors(){
-ctx.beginPath()
+ctx.beginPath();
+ctx.rect(0,0,350,200);
+ctx.fillStyle = "#FFFFFF";
+ctx.fill();
 ctx.arc(70, 150, 20, 0, 2 * Math.PI);
 ctx.arc(70, 200, 20, 0, 2 * Math.PI);
 ctx.stroke();
@@ -56,6 +59,9 @@ Player1Hand = "Scissors";
 }
 function Player1Paper(){
 ctx.beginPath();
+ctx.rect(0,0,350,200);
+ctx.fillStyle = "#FFFFFF";
+ctx.fill();
 ctx.rect(70, 150, 85, 110)
 ctx.stroke();
 Player1Hand = "Paper";
@@ -63,7 +69,7 @@ Player1Hand = "Paper";
 function Computer(){
 var decider = Math.random();
 if(decider < 0.3 & decider > 0){
-ctx.beginPath()
+ctx.beginPath();
 ctx.arc(600, 200, 40, 0, 2 * Math.PI);
 ctx.stroke();
 Player2Hand = "Rock";
@@ -71,13 +77,13 @@ CanAlert++;
 }
 if(decider < 0.6 & decider > 0.3){
 ctx.beginPath();
-ctx.rect(565, 150, 85, 110)
+ctx.rect(565, 150, 85, 110);
 ctx.stroke();
 Player2Hand = "Paper";
 CanAlert++;
 }
 if(decider < 0.9 & decider > 0.6){
-ctx.beginPath()
+ctx.beginPath();
 ctx.arc(545, 250, 20, 0, 2 * Math.PI);
 ctx.arc(545, 200, 20, 0, 2 * Math.PI);
 ctx.stroke();
