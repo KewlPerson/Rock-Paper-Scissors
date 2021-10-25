@@ -36,26 +36,36 @@ ctx.stroke();
 document.getElementById("bold").innerHTML = "Score: " + score1;
 function Player1Rock(){
 ctx.beginPath();
-ctx.clearRect(0,0,700,200);
+ctx.strokeStyle = "#FFFFFF";
+ctx.rect(0,0,350,400);
 ctx.fillStyle = "#FFFFFF";
 ctx.fill();
+ctx.stroke();
+ctx.beginPath();
+ctx.strokeStyle = "#000000";
 ctx.arc(100, 200, 40, 0, 2 * Math.PI);
 ctx.stroke();
 Player1Hand = "Rock";
 }
 function Player1Scissors(){
 ctx.beginPath();
-ctx.clearRect(0,0,700,200);
+ctx.strokeStyle = "#FFFFFF";
+ctx.rect(0,0,350,400);
 ctx.fillStyle = "#FFFFFF";
 ctx.fill();
+ctx.stroke();
+ctx.beginPath();
+ctx.strokeStyle = "#000000";
 ctx.arc(70, 150, 20, 0, 2 * Math.PI);
 ctx.arc(70, 200, 20, 0, 2 * Math.PI);
 ctx.stroke();
 ctx.beginPath();
+ctx.strokeStyle = "#000000";
 ctx.moveTo(90, 150);
 ctx.lineTo(130, 200);
 ctx.stroke();
 ctx.beginPath();
+ctx.strokeStyle = "#000000";
 ctx.moveTo(90, 200)
 ctx.lineTo(130, 150)
 ctx.stroke();
@@ -63,9 +73,13 @@ Player1Hand = "Scissors";
 }
 function Player1Paper(){
 ctx.beginPath();
-ctx.clearRect(0,0,70,200);
+ctx.strokeStyle = "#FFFFFF"
+ctx.rect(0,0,70,200);
 ctx.fillStyle = "#FFFFFF";
 ctx.fill();
+ctx.stroke();
+ctx.beginPath();
+ctx.strokeStyle = "#000000"
 ctx.rect(70, 150, 85, 110)
 ctx.stroke();
 Player1Hand = "Paper";
