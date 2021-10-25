@@ -36,6 +36,9 @@ ctx.stroke();
 document.getElementById("bold").innerHTML = "Score: " + score1;
 function Player1Rock(){
 ctx.beginPath();
+ctx.rect(0,0,350,200);
+ctx.fillStyle = "#FFFFFF";
+ctx.fill();
 ctx.arc(100, 200, 40, 0, 2 * Math.PI);
 ctx.stroke();
 Player1Hand = "Rock";
