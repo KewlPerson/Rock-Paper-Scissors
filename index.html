@@ -155,10 +155,10 @@ CanAlert -= 1
 }
 }
 if(rounds >= 3){
-if(score1 > score2){
+if(score1 >= 2){
 document.getElementById("bold2").innerHTML = "Status: Won!"
 }
-else if(score1 < score2){
+else if(score2 >= 2){
 document.getElementById("bold2").innerHTML = "Status: Lost"
 }
 else if(score1 == score2){
