@@ -17,14 +17,15 @@
   }
 </style>
 <script>
-var CanContinue = 0
-var CanAlert = 0
+var CanContinue = 0;
+var CanSubmit = 1; 
+var CanAlert = 0;
 var score1 = 0;
 var score2 = 0;
 var rounds = 1;
 var Player1Hand = "";
 var Player2Hand = "";
-var round_number = 1
+var round_number = 1;
 var canvas = document.getElementById("RPS");
 var ctx = canvas.getContext("2d");
 ctx.beginPath();
@@ -67,7 +68,8 @@ ctx.stroke();
 Player1Hand = "Paper";
 }
 function Computer(){
-CanContinue = 1
+CanContinue = 1;
+CanSubmit = 0;
 var decider = Math.random();
 if(decider < 0.3 & decider > 0){
 ctx.beginPath();
@@ -184,6 +186,7 @@ ctx.fill();
 ctx.stroke();
 }
 CanContinue = 0
+CanSubmit = 1
 }
 </script>
 <br><button onclick="Player1Rock()">Rock!</button>
