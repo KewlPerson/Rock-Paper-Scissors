@@ -36,7 +36,7 @@ ctx.stroke();
 document.getElementById("bold").innerHTML = "Score: " + score1;
 function Player1Rock(){
 ctx.beginPath();
-ctx.rect(0,0,350,200);
+ctx.clearRect(0,0,700,200);
 ctx.fillStyle = "#FFFFFF";
 ctx.fill();
 ctx.arc(100, 200, 40, 0, 2 * Math.PI);
@@ -45,7 +45,7 @@ Player1Hand = "Rock";
 }
 function Player1Scissors(){
 ctx.beginPath();
-ctx.rect(0,0,350,200);
+ctx.clearRect(0,0,700,200);
 ctx.fillStyle = "#FFFFFF";
 ctx.fill();
 ctx.arc(70, 150, 20, 0, 2 * Math.PI);
@@ -63,7 +63,7 @@ Player1Hand = "Scissors";
 }
 function Player1Paper(){
 ctx.beginPath();
-ctx.rect(0,0,350,200);
+ctx.clearRect(0,0,70,200);
 ctx.fillStyle = "#FFFFFF";
 ctx.fill();
 ctx.rect(70, 150, 85, 110)
