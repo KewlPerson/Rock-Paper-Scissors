@@ -61,7 +61,6 @@ ctx.stroke();
 Player1Hand = "Paper";
 }
 function Computer(){
-CanContinue = 1
 var decider = Math.random();
 if(decider < 0.3 & decider > 0){
 ctx.beginPath()
@@ -163,12 +162,13 @@ document.getElementById("bold2").innerHTML = "Status: Lost"
 }
 else if(score1 == score2){
 document.getElementById("bold2").innerHTML = "Status: Tie"
+CanContinue = 1
 }
-alert("All Rounds are finished. Check your status to see if you won!");
+alert("All rounds are finished. Check your status to see if you won!");
 }
 }
 function nextRound(){
-if(CanContinue != 0){
+if(CanContinue > 0){
 document.getElementById("Rounds").innerHTML="Round Number: " + rounds
 ctx.beginPath();
 ctx.rect(0, 0, 700, 400);
